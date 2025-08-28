@@ -1,0 +1,26 @@
+cat > .gitignore << 'EOF'
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]serSettings/
+.vs/
+.idea/
+.gradle/
+*.csproj
+*.sln
+*.user
+*.unityproj
+*.pidb
+*.booproj
+*.svd
+*.userprefs
+*.swp
+*.bak
+*.tmp
+*.db
+*.opendb
+*.pidb.meta
+EOF

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb291ff93b82c0d48918932f00b3ff01, type: 3}
+  m_Name: Player_Animation_Set_idle
+  m_EditorClassIdentifier: 
+  <Up>k__BackingField: {fileID: 7400000, guid: f80e59baef0ff234db6eb97845c752ba, type: 2}
+  <Down>k__BackingField: {fileID: 7400000, guid: 771b5792f35aa58448c945c68832662b, type: 2}
+  <Right>k__BackingField: {fileID: 7400000, guid: bcd355105a842994aae7c1958b6d5b4d, type: 2}
+  <Left>k__BackingField: {fileID: 7400000, guid: 8f1513d59185437468f8b55ede9bebb7, type: 2}
