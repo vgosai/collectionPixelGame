@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f132f1dcafd9a3f4080b23b137694d87, type: 3}
-  m_Name: Resource_wood_brown
+  m_Name: Resource_sand_dollar
   m_EditorClassIdentifier: 
   <DisplayName>k__BackingField: 
-  <Icon>k__BackingField: {fileID: 979291680, guid: c92980c8233ec9a4f9ee11226f34ad22, type: 3}
-  <Description>k__BackingField: Basic wood for building furniture and building
+  <Icon>k__BackingField: {fileID: 872472706, guid: 85e0fcddffb74a34eac509e122429ab6, type: 3}
+  <Description>k__BackingField: Basic Currency
   <Value>k__BackingField: 1

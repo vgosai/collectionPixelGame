@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2419dba3efcb0114bb20f1a8d658f2a8, type: 3}
+  m_Name: TileOptions_tall
+  m_EditorClassIdentifier: 
+  tile1: {fileID: 11400000, guid: f5c46909c65552847832a9755edf96d6, type: 2}
+  tile2: {fileID: 11400000, guid: 330f653f26b71db418c3f50af701308c, type: 2}
+  tile3: {fileID: 11400000, guid: 0aeefbde2fd493540a4134417ec31b8a, type: 2}
+  tile4: {fileID: 11400000, guid: dfc3eea65572d244c9e14dfabaef7b38, type: 2}
+  groundLevel: 0

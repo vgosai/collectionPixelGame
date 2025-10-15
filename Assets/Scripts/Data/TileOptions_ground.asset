@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2419dba3efcb0114bb20f1a8d658f2a8, type: 3}
+  m_Name: TileOptions_ground
+  m_EditorClassIdentifier: 
+  tile1: {fileID: 11400000, guid: 1026d2c52c31e5e4da2afe2264714369, type: 2}
+  tile2: {fileID: 11400000, guid: c314ea0c15f914d4dacbc6a168be435c, type: 2}
+  tile3: {fileID: 11400000, guid: 941474c5c8665d044bbd59a8813c233b, type: 2}
+  tile4: {fileID: 11400000, guid: c117841ba3da2944bb3ae6c85191fa75, type: 2}
+  groundLevel: 1

@@ -7,11 +7,16 @@ using UnityEngine.Tilemaps;
 public class TilemapVisualizer : MonoBehaviour
 {
     [SerializeField]
-    private Tilemap floorTilemap, wallTileMap; //We can use this visualizer to draw to different tilemaps/layers within the one tilemap
+    private Tilemap floorTilemap, wallTileMap, groundLevelDecor, tallDecor; //We can use this visualizer to draw to different tilemaps/layers within the one tilemap
+    public Tilemap FloorTileMap {
+        get { return floorTilemap; }
+        private set { floorTilemap = value; }
+    }
     [SerializeField]
     private TileBase floorTile, wallTop, wallSideRight, wallSideLeft, wallBottom, wallFull,
         wallInnerCornerDownLeft, wallInnerCornerDownRight, wallDiagonalCornerDownRight, wallDiagonalCornerDownLeft,
         wallDiagonalCornerUpRight, wallDiagonalCornerUpLeft; //for variation just make scriptable object/array and just randomly select from it
+    
 
     public void PaintFloorTiles(IEnumerable<Vector2Int> floorPositions) //We use IEnurable with generic vector2int just in case we are using different collections because we want to be as general as possible for good code
     {
@@ -36,6 +41,8 @@ public class TilemapVisualizer : MonoBehaviour
     {
         floorTilemap.ClearAllTiles();
         wallTileMap.ClearAllTiles();
+        groundLevelDecor.ClearAllTiles();
+        tallDecor.ClearAllTiles();
     }
 
     public void PaintSingleBasicWall(Vector2Int position, string binaryType)
@@ -110,5 +117,10 @@ public class TilemapVisualizer : MonoBehaviour
         {
             PaintSingleTile(wallTileMap, tile, position);
         }
+    }
+
+    internal void PaintDecorTile(KeyValuePair<Vector2Int, TileOpinions> spot)
+    {
+        PaintSingleTile(spot.Value.GroundLevel ? groundLevelDecor : tallDecor, spot.Value.GetRandomTile(), spot.Key);
     }
 }

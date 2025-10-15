@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3313818453899532264}
   - component: {fileID: 2047788753534678796}
   m_Layer: 0
-  m_Name: tree_pine
+  m_Name: sand_dollar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1399276525, guid: 2b9cbcf08dc238f4599bd9e44de6cd1f, type: 3}
+  m_Sprite: {fileID: -175866312, guid: be799c2b239f6794499b0c240650e00f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -119,9 +119,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0010971427, y: 0.03738509}
-  m_Size: {x: 0.10545206, y: 0.1185129}
-  m_Direction: 0
+  m_Offset: {x: -0.0014089271, y: 0.06428223}
+  m_Size: {x: 0.31238312, y: 0.13904773}
+  m_Direction: 1
 --- !u!50 &3313818453899532264
 Rigidbody2D:
   serializedVersion: 4
@@ -161,5 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb8b62e81bc937046b9d81ebd6e25de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <HarvestingType>k__BackingField: {fileID: 0}
+  <ReasourceEmitPS>k__BackingField: {fileID: 0}
   <ReasouceCount>k__BackingField: 5
-  <ReasourceNode>k__BackingField: {fileID: 8971987305398805798}

@@ -14,8 +14,12 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 5559d886722cfc94ca5c0167352a0ad6, type: 2}
     - target: {fileID: 4208494298417127672, guid: e6bfe6c6082aaca4b949d7fb20feeb72, type: 3}
       propertyPath: m_Name
-      value: HarvestableObject_TreePine
+      value: HarvestableObject_sandDollarMound
       objectReference: {fileID: 0}
+    - target: {fileID: 5359052880536438943, guid: e6bfe6c6082aaca4b949d7fb20feeb72, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6f61d4198c58e6c4aa0db08cc82b6c39, type: 2}
     - target: {fileID: 7805777431225559607, guid: e6bfe6c6082aaca4b949d7fb20feeb72, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.4226512

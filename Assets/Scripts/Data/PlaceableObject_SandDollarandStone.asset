@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf9f43729d399b444962b19cc340b136, type: 3}
-  m_Name: SimpleRandomWalkParameters_BigDungeon_island
+  m_Script: {fileID: 11500000, guid: f0681b172baffd64583183d4ef161909, type: 3}
+  m_Name: PlaceableObject_SandDollarandStone
   m_EditorClassIdentifier: 
-  iterations: 25
-  walkLength: 40
-  startRandomlyEachIteration: 0
+  size: {x: 2, y: 2}
+  placementType: 0
+  addOffset: 1
+  iterationsMax: 40

@@ -17,6 +17,19 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     private int offset = 1; //offset so the new rooms arent just touching each other
     [SerializeField]
     private bool randomWalkRooms = false; //use randomwalk or partitioning and the RandomWalk parameters are protected so are usable for this class
+    [SerializeField]
+    private List<TileOpinions> tileOpinions;
+    [SerializeField]
+    [Range(0, 1)]
+    private float decorFreq;
+    [SerializeField]
+    private List<GameObject> harvestables;
+    [SerializeField]
+    private PlaceableObject placeableObject;
+    private Dictionary<Vector2Int, HashSet<Vector2Int>> roomMapsDictionairy = new Dictionary<Vector2Int, HashSet<Vector2Int>>(); //key is the start position of each rooms generation and the value is that rooms final hashSet
+    private Dictionary<Vector2Int, Dictionary<Vector2Int, HashSet<Vector2Int>>> adjacencyGraph = new Dictionary<Vector2Int, Dictionary<Vector2Int, HashSet<Vector2Int>>>();
+    private HashSet<Vector2Int> corridors;
+    
     protected override void RunProceduralGeneration()
     {
         CreateRooms();
@@ -29,6 +42,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         if (randomWalkRooms)
         {
             floor = CreateRoomsRandomly(roomList);
+            Debug.Log("num floor tiles: " + floor.Count);
         }
         else
         {
@@ -37,12 +51,16 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         List<Vector2Int> roomCenters = new List<Vector2Int>();
         foreach (var room in roomList)
         {
-            roomCenters.Add((Vector2Int)Vector3Int.RoundToInt(room.center));
+            Vector2Int center = (Vector2Int)Vector3Int.RoundToInt(room.center);
+            roomCenters.Add(center);
         }
-        HashSet<Vector2Int> corridors = ConnectRooms(roomCenters);
+        corridors = ConnectRooms(roomCenters);
+        Debug.Log("num corridor tiles: " + corridors.Count);
         floor.UnionWith(corridors);
+        Debug.Log("num floor tiles after adding corridors: " + floor.Count);
         tilemapVisualizer.PaintFloorTiles(floor);
         WallGenerator.CreateWalls(floor, tilemapVisualizer);
+        DecorandHarvestableGeneration.CreateDecorandObjects(floor, tileOpinions, harvestables, placeableObject, decorFreq, roomMapsDictionairy, corridors, tilemapVisualizer);
     }
 
     private HashSet<Vector2Int> CreateRoomsRandomly(List<BoundsInt> roomList)
@@ -60,6 +78,15 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
                     floor.Add(position);
                 }
             }
+            try
+            {
+                roomMapsDictionairy.Add(roomCenters, roomFloor);
+            }
+            catch (ArgumentException)
+            {
+                Debug.Log("already added");
+            }
+
         }
         return floor;
     }
@@ -73,7 +100,10 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         {
             Vector2Int closest = FindClosestPointTo(currentRoomCenter, roomCenters);
             roomCenters.Remove(closest);
+            Dictionary<Vector2Int, HashSet<Vector2Int>> edges = new Dictionary<Vector2Int, HashSet<Vector2Int>>();
+            adjacencyGraph.Add(currentRoomCenter, edges);
             HashSet<Vector2Int> newCorridor = CreateCorridor(currentRoomCenter, closest);
+            edges.Add(closest, newCorridor);
             currentRoomCenter = closest;
             corridors.UnionWith(newCorridor);
         }
